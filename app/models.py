@@ -9,6 +9,7 @@ class Cliente(models.Model):
     nombre = models.CharField(max_length=20, verbose_name='Nombre')
     telefono= models.IntegerField(verbose_name='Telefono')
     correo = models.CharField(max_length=50, verbose_name='Correo')
+    direccion = models.CharField(max_length=50, verbose_name='Direccion')
     edad = models.IntegerField(verbose_name='Edad')
     cantidad_mascotas = models.IntegerField(verbose_name='Cantidad de Mascotas')
 

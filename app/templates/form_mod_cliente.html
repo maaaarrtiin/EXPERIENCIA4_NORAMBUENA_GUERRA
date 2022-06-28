@@ -39,6 +39,7 @@
                       nombre: "required",
                       telefono: "required",
                       correo: "required",
+                      direccion: "required",
                       edad: "required",
                       cantidad_mascotas: "required",
                       },   
@@ -58,6 +59,11 @@
                   correo:{
                       required: 'Ingrese correo',
                   },
+            
+                  direccion:{
+                      required: 'Ingrese direccion',
+                  },
+
                   edad:{
                       required: 'Ingrese edad',
                       
@@ -98,6 +104,11 @@
             <div class="form-group">
                 {{form.correo.label}}              
                 {{form.correo}}
+            </div>
+            <br>
+            <div class="form-group">
+                {{form.direccion.label}}              
+                {{form.direccion}}
             </div>
             <br>
             <div class="form-group">

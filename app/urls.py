@@ -2,7 +2,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from django.urls import path 
-from .views import index, quienessomos, galeria, formulario, apiferiados,mensaje,mostrar,mostrar2,forms_clientes,form_mod_cliente,form_del_cliente,forms_productos,form_mod_producto,form_del_producto
+from .views import index, quienessomos, galeria, formulario, apiferiados, apiclientes,mensaje,mostrar,mostrar2,forms_clientes,form_mod_cliente,form_del_cliente,forms_productos,form_mod_producto,form_del_producto
 
 urlpatterns=[
     path('',index, name="index"),
@@ -10,6 +10,7 @@ urlpatterns=[
     path('galeria/', galeria, name="galeria"),
     path('formulario/', formulario, name="formulario"),
     path('apiferiados/', apiferiados, name="apiferiados"),
+    path('apiclientes/', apiclientes, name="apiclientes"),
     path('mensaje/', mensaje, name="mensaje"),
     path('mostrar/', mostrar, name="mostrar"),
     path('mostrar2/', mostrar2, name="mostrar2"),

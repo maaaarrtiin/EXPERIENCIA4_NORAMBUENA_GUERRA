@@ -59,8 +59,14 @@
                 <a class="nav-link" href="{% url 'mostrar2' %}">Productos</a>
               </li> 
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'logout' %}">Cerrar Sesion</a>
+                <a class="nav-link" href="{% url 'apiclientes' %}">API Clientes</a>
               </li> 
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">Cerrar Sesion</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Bienvenid@ {{ user.username }}</a>
+              </li>  
             {% else %}
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'index' %}">Inicio</a>
@@ -99,6 +105,7 @@
                     <th>Nombre</th>
                     <th>Telefono</th>
                     <th>Correo</th>
+                    <th>Direccion</th>
                     <th>Edad</th>
                     <th>Cantidad de mascotas</th>
                 </tr>
@@ -110,6 +117,7 @@
                     <td>{{ cl.nombre }}</td>
                     <td>{{ cl.telefono }}</td>
                     <td>{{ cl.correo }}</td>
+                    <td>{{ cl.direccion }}</td>
                     <td>{{ cl.edad }}</td>
                     <td>{{ cl.cantidad_mascotas }}</td>
                     <td><a href="{% url 'form_mod_cliente' cl.rut %}" class="btn btn-success">Modificar</a></td>

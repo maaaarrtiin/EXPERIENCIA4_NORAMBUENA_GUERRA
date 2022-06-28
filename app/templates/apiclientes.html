@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feriados 2022</title>
+    <title>Api clientes</title>
     {% load static %}
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
@@ -27,14 +27,17 @@
 
             $("#enviar").click(function(){
 
-                $.get("https://apis.digital.gob.cl/fl/feriados/2022",function(data){
+                $.get("http://127.0.0.1:8000/api/lista_clientes",function(data){
 
                     $.each(data ,function(i,item)
                         {
-                            $("#categorias").append("<tr><td>"+ item.nombre +
-                            "</td><td>"+ item.fecha +
-                            "</td><td>"+ item.irrenunciable +
-                            "</td><td>"+ item.tipo +"</td></tr>");
+                            $("#categorias").append("<tr><td>"+ item.rut +
+                            "</td><td>"+ item.nombre +
+                            "</td><td>"+ item.telefono +
+                            "</td><td>"+ item.correo +
+                            "</td><td>"+ item.direccion +
+                            "</td><td>"+ item.edad +
+                            "</td><td>"+ item.cantidad_mascotas +"</td></tr>");
                           
                         });
 
@@ -44,12 +47,6 @@
         });
 
     </script>
-<script>
-        function MostrarFecha() 
-        {   document.getElementById('demo').innerHTML = Date();
-         
-        }
-</script>
 </head>
 <body>
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
@@ -123,24 +120,25 @@
     
     <div class="container">
         <br>
-        <h1>Feriados del 2022 en Chile</h1><br>
-        <h3>No atendemos los días feriados! así que informate con esta lista de feriados que implementamos en nuestra página web.</h3>
+        <h1>Mostrar Clientes mediante API REST</h1>
         <br>
-        <button onclick="MostrarFecha()" value="La fecha es?">Mostrar Fecha de hoy</button>
-        <p id="demo"></p>
+        <h3>Al presionar el boton se mostraran todos los clientes mediante la API</h3>
         <br>
 
-        <button id="enviar">Consultar Feriados</button><br><br>
+        <button id="enviar">Consultar Clientes</button><br><br>
 
         <!--crearemos una tabla para mostrar los datos de la Api-->
 
         <table class="table" id="categorias">
             <thead>
                 <tr>
+                    <th>Rut</th>
                     <th>Nombre</th>
-                    <th>Fecha</th>
-                    <th>Irrenunciable (1=Si, 2=No)</th>
-                    <th>Tipo</th>
+                    <th>Telefono</th>
+                    <th>Correo</th>
+                    <th>Direccion</th>
+                    <th>Edad</th>
+                    <th>Cantidad de Mascotas</th>
                 </tr>
             </thead>
             <tbody>

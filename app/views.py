@@ -18,6 +18,9 @@ def formulario(request):
 def apiferiados(request):
     return render(request, 'apiferiados.html')
 
+def apiclientes(request):
+    return render(request, 'apiclientes.html')
+
 def mensaje(request):
     return render(request, 'mensaje.html')
 

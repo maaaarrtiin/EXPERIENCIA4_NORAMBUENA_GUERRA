@@ -47,10 +47,17 @@
           </li> 
           <li class="nav-item">
             <a class="nav-link" href="{% url 'mostrar2' %}">Productos</a>
-          </li> 
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'apiclientes' %}">API Clientes</a>
+          </li>  
           <li class="nav-item">
             <a class="nav-link" href="{% url 'logout' %}">Cerrar Sesion</a>
-          </li> 
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Bienvenid@ {{ user.username }}</a>
+          </li>  
+          
         {% else %}
           <li class="nav-item">
             <a class="nav-link" href="{% url 'index' %}">Inicio</a>
